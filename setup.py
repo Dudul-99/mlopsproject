@@ -13,7 +13,7 @@ def get_requirements(path: str)->List[str]:
         requirements=[req.replace("\n","") for req in requirements]
 
         if hyphen_dot in requirements:
-  e          requirements.remove(hyphen_dot)
+            requirements.remove(hyphen_dot)
     return requirements
 
 
