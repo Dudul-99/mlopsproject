@@ -15,7 +15,9 @@ class DataIngestionConfig:
     test_data_path: str=os.path.join('artifacts',"test.csv")
     raw_data_path: str=os.path.join('artifacts',"data.csv")
 
-
+'''
+This class is responsible for the data ingestion process
+'''
 class DataIngestion:
     def __init__(self):
         self.ingestion_config=DataIngestionConfig()
@@ -47,7 +49,9 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
 
-
+'''
+The main function is used for testing the data ingestion component
+'''
 if __name__=="__main__":
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
