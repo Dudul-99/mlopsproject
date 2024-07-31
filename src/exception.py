@@ -1,5 +1,5 @@
 import sys
-
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
@@ -21,10 +21,17 @@ class CustomException(Exception):
 '''
  Testing the code ==> python src/exception.py
  Check the logs folder for the 'logs' foldeer
- if __name__ == "__main__":
+if __name__ == "__main__":
     try:
-        raise CustomException("This is a test error",sys)
-    except CustomException as e:
-        logging.error(e)
-        print(e)
+        a=1/0
+    except Exception as e:
+        logging.info("Divide by zero")
+        raise CustomException(e,sys)
 '''
+
+if __name__ == "__main__":
+    try:
+        a=1/0
+    except Exception as e:
+        logging.info("Divide by zero")
+        raise CustomException(e,sys)
